@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+      <div class="container">
+        <div class="row justify-content-center mb-3">
+          <h1>Edit contact</h1>
+        </div>
+        <div class="row justify-content-center">
+          <form class="col-sm-6" action="/contacts/edit/{{contact.id}}" method="post">
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="{{contact.first_name}}"
+                name="first_name"
+                value="{{contact.first_name}}"
+              />
+            </div>
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="{{contact.last_name}}"
+                name="last_name"
+                value="{{contact.last_name}}"
+              />
+            </div>
+            {% if contact.phones %}
+            {% for phone in contact.phones %}
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="{{phone.phone_number}}"
+                name="phone_number"
+                value="{{phone.phone_number}}"
+              />
+            </div>
+              {% endfor %}
+          {% endif %}
+          {% if contact.emails %}
+            {% for email in contact.emails %}
+            <div class="form-group">
+              <input
+                class="form-control"
+                type="text"
+                placeholder="{{email.email}}"
+                name="email"
+                value="{{email.email}}"
+              />
+            </div>
+                {% endfor %}
+              {% endif %}
+
+            <div class="form-group">
+              <button class="btn btn-primary col-sm-12" type="submit">
+                Update
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+{% endblock %}
