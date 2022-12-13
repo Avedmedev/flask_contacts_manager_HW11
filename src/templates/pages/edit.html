@@ -5,7 +5,12 @@
         <div class="row justify-content-center mb-3">
           <h1>Edit contact</h1>
         </div>
-        <div class="row justify-content-center">
+          {% if messages %}
+            {% for message in messages %}
+              <div class="alert alert-warning">{{message}}</div>
+            {% endfor %}
+          {% endif %}
+          <div class="row justify-content-center">
           <form class="col-sm-6" action="/contacts/edit/{{contact.id}}" method="post">
             <div class="form-group">
               <input

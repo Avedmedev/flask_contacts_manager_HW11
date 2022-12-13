@@ -49,7 +49,8 @@ class Person(db.Model):
         return desc
 
     def modify_name(self):
-        self.first_name = f'пан {self.first_name}'
+        if not self.first_name[:4] == 'пан ':
+            self.first_name = f'пан {self.first_name}'
         return self.first_name
 
 

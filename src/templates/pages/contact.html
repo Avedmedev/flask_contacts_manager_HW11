@@ -3,7 +3,7 @@
 {% block content %}
 <div class="container">
   <div class="row mb-3">
-    <h1>My contacts</h1>
+    <h1>Contact info</h1>
   </div>
   {% with messages = get_flashed_messages() %}
     {% if messages %}
@@ -13,7 +13,6 @@
     {% endif %}
   {% endwith %}
   <div class="row">
-    {% for contact in contacts %}
     <div class="col-md-4">
       <div class="card mb-4 shadow-sm">
         <div class="card-body">
@@ -62,7 +61,6 @@
         </div>
       </div>
     </div>
-    {% endfor %}
   </div>
 </div>
 {% endblock %}
