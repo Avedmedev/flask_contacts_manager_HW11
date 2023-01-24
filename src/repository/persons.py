@@ -1,6 +1,6 @@
 from sqlalchemy import and_
 
-from src import db, session
+from src import session
 from src import models
 
 
