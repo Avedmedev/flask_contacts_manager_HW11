@@ -11,3 +11,6 @@ for login
 
 email: al.vedmedev@gmail.com
 password: 12345
+
+
+Добавлено тестирование в папке tests
